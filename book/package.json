@@ -8,9 +8,9 @@
   "keywords": [
   	"microservice",
   	"api",
-  	"nodejs"
-  	"hapi"
-  	"mongodb",
+  	"nodejs",
+  	"hapi",
+  	"mongodb"
   ],
   "author": "Kostya Stefanovitch",
   "license": "ISC"
