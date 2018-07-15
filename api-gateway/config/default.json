@@ -1,0 +1,12 @@
+{
+  "service": {
+    "host": "http://localhost",
+    "port": 3000
+  },
+  "proxyMap": {
+    "/user": "http://localhost:3001/api/user",
+    "/user/{id}": "http://localhost:3001/api/user/{id}",
+    "/book": "http://localhost:3002/api/book",
+    "/book/{id}": "http://localhost:3002/api/book/{id}"
+  }
+}

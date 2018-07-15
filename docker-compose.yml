@@ -8,7 +8,6 @@ services:
       container_name: "user-service"
       entrypoint: /usr/src/entypoint
       ports:
-        - 3001:3001
         - 28017:27017
       volumes:
         - ./user:/usr/src/app
@@ -24,7 +23,6 @@ services:
       container_name: "book-service"
       entrypoint: /usr/src/entypoint
       ports:
-        - 3002:3002
         - 28018:27017
       volumes:
         - ./book:/usr/src/app
@@ -32,4 +30,21 @@ services:
         - ./data/book/db:/data/db
       environment:
         - NODE_ENV=docker-dev
+      restart: always
+  api-gateway-service:
+      build:
+        context: ./api-gateway
+        dockerfile: Dockerfile
+      container_name: "api-gateway-service"
+      entrypoint: /usr/src/entypoint
+      ports:
+        - 3000:3000
+      volumes:
+        - ./api-gateway:/usr/src/app
+        - ./entrypoints/api-gateway-service-entypoint:/usr/src/entypoint
+      environment:
+        - NODE_ENV=docker-dev
+      links:
+        - user-service
+        - book-service
       restart: always

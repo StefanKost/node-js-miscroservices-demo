@@ -1,0 +1,23 @@
+{
+  "apps": [
+    {
+      "name": "api-gateway",
+      "script": "./index.js",
+      "watch": false,
+      "ignore_watch": [
+        "node_modules",
+        "db",
+        ".git",
+        ".vscode"
+      ],
+      "env_docker-dev": {
+        "ENVIRONMENT": "docker-dev",
+        "NODE_ENV": "docker-dev"
+      },
+      "env_local": {
+        "ENVIRONMENT": "local",
+        "NODE_ENV": "local"
+      }
+    }
+  ]
+}
