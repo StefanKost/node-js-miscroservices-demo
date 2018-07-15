@@ -17,3 +17,19 @@ services:
       environment:
         - NODE_ENV=docker-dev
       restart: always
+  book-service:
+      build:
+        context: ./book
+        dockerfile: Dockerfile
+      container_name: "book-service"
+      entrypoint: /usr/src/entypoint
+      ports:
+        - 3002:3002
+        - 28018:27017
+      volumes:
+        - ./book:/usr/src/app
+        - ./entrypoints/book-service-entrypoint:/usr/src/entypoint
+        - ./data/book/db:/data/db
+      environment:
+        - NODE_ENV=docker-dev
+      restart: always

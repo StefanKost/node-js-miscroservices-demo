@@ -4,14 +4,25 @@
   "description": "This is API book service",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
+    "seed": "md-seed run"
   },
   "keywords": [
-  	"microservice",
-  	"api",
-  	"nodejs",
-  	"hapi",
-  	"mongodb"
+    "microservice",
+    "api",
+    "nodejs",
+    "hapi",
+    "mongodb"
   ],
   "author": "Kostya Stefanovitch",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "config": "^1.26.2",
+    "globby": "^6.1.0",
+    "hapi": "^16.5.2",
+    "joi": "^10.6.0",
+    "lodash": "^4.17.4",
+    "mongoose": "^4.11.7",
+    "mongoose-data-seed": "^1.0.2"
+  }
 }
