@@ -1,0 +1,6 @@
+# Dependency directories
+api-gateway/node_modules
+book/node_modules
+user/node_modules
+
+.idea

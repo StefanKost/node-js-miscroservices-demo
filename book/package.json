@@ -1,0 +1,17 @@
+{
+  "name": "book",
+  "version": "1.0.0",
+  "description": "This is API book service",
+  "main": "index.js",
+  "scripts": {
+  },
+  "keywords": [
+  	"microservice",
+  	"api",
+  	"nodejs"
+  	"hapi"
+  	"mongodb",
+  ],
+  "author": "Kostya Stefanovitch",
+  "license": "ISC"
+}
