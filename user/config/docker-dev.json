@@ -1,0 +1,9 @@
+{
+  "service": {
+    "host": "http://localhost",
+    "port": 3001
+  },
+  "database": {
+    "url": "mongodb://localhost:27017/User"
+  }
+}
