@@ -1,0 +1,19 @@
+version: "3"
+
+services:
+  user-service:
+      build:
+        context: ./user
+        dockerfile: Dockerfile
+      container_name: "user-service"
+      entrypoint: /usr/src/entypoint
+      ports:
+        - 3001:3001
+        - 28017:27017
+      volumes:
+        - ./user:/usr/src/app
+        - ./entrypoints/user-service-entrypoint:/usr/src/entypoint
+        - ./data/user/db:/data/db
+      environment:
+        - NODE_ENV=docker-dev
+      restart: always
