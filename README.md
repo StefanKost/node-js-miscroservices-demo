@@ -9,7 +9,7 @@ Current project shows how to build web application use microservices architectur
 ````
 docker-compose up
 ````
-Project opens on 3000 port.
+Project opens on 80 port.
 
 # API documentation
 User:
@@ -30,5 +30,5 @@ DELETE /user/{id} - Delete user by id
 ````
 
 # How works microservices in this project?
-API Gateway is public microservice which get requests and send these for User or Book microservice. When services send response then API Gateway return reply for user.
+Proxy is public microservice which get requests and send these for API Gateway service. API Gateway service redirects to User or Book microservice. When services send response then API Gateway return reply for proxy and after that the proxy microservice send answer for user.
 

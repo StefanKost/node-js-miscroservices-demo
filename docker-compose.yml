@@ -37,8 +37,6 @@ services:
         dockerfile: Dockerfile
       container_name: "api-gateway-service"
       entrypoint: /usr/src/entypoint
-      ports:
-        - 3000:3000
       volumes:
         - ./api-gateway:/usr/src/app
         - ./entrypoints/api-gateway-service-entypoint:/usr/src/entypoint
@@ -47,4 +45,13 @@ services:
       links:
         - user-service
         - book-service
+      restart: always
+  nginx-proxy:
+      image: nginx:latest
+      links:
+        - api-gateway-service
+      ports:
+        - 80:80
+      volumes:
+        - ./proxy/nginx.conf:/etc/nginx/nginx.conf:ro
       restart: always
