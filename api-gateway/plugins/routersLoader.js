@@ -2,6 +2,7 @@
 
 const Boom = require('boom');
 const proxyMap = require('config').get('proxyMap');
+const querystring = require('querystring');
 
 const proxyHandler = {
   proxy: {
@@ -11,6 +12,10 @@ const proxyHandler = {
 
       if( req.params && req.params.id ) {
         uri = uri.replace('{id}', req.params.id);
+      }
+
+      if ( Object.keys(req.query).length > 0 ) {
+        uri += `?${querystring.stringify(req.query)}`;
       }
 
       cb(null, uri, req.headers);
